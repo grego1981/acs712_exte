@@ -13,8 +13,8 @@ class ACS712Sensor : public PollingComponent, public sensor {
     void setup() override;
     void update() override;
 
-    Sensor *current_sensor = new sensor();
-    Sensor *power_sensor = new sensor();
+    sensor *current_sensor = new sensor();
+    sensor *power_sensor = new sensor();
 
    private:
     ACS712 *ACS = new ACS712(A0, 5, 1023, 100);
