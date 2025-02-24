@@ -12,11 +12,9 @@ CONFIG_SCHEMA = sensor.sensor_schema(
     unit_of_measurement=UNIT_AMPERE,
     icon=ICON_CURRENT_AC,
     accuracy_decimals=2,
-).extend(cv.polling_component_schema()).extend({
-    cv.Required("name"): cv.string,  # Name of the sensor in ESPHome
-})
+).extend(cv.polling_component_schema())
 
 async def to_code(config):
-    var = cg.new_Pvariable(config["name"])
+    var = cg.new_Pvariable(config["id"])
     await cg.register_component(var, config)
     await sensor.register_sensor(var, config)
