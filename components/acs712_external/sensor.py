@@ -19,4 +19,4 @@ async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await cg.register_component(var, config)
     await sensor.register_sensor(var, config)
-    cg.add_library("RobTillaart/ACS712", "1.0.0")
+    cg.add_library("RobTillaart/ACS712", "0.3.10")
