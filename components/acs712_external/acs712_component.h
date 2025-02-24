@@ -1,7 +1,7 @@
 #pragma once
 
-#include "esphome/core/component.h"  // Core ESPHome component features
-#include "esphome/components/sensor/sensor.h"  // Sensor class
+#include "esphome/core/component.h"  // Core ESPHome features
+#include "esphome/components/sensor/sensor.h"  // Include Sensor
 #include "ACS712.h"
 
 namespace esphome {
@@ -14,8 +14,8 @@ class ACS712Sensor : public PollingComponent {
     void setup() override;
     void update() override;
 
-    sensor::Sensor *current_sensor = new sensor::Sensor();  // Correct sensor class
-    sensor::Sensor *power_sensor = new sensor::Sensor();  // Correct sensor class
+    sensor::Sensor *current_sensor = new sensor::Sensor();
+    sensor::Sensor *power_sensor = new sensor::Sensor();
 
    private:
     ACS712 *ACS = new ACS712(A0, 5, 1023, 100);
