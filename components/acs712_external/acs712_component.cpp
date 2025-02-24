@@ -1,4 +1,4 @@
-#include "acs712_component.h"
+#include "acs712_component_old_prd.h"
 
 namespace esphome {
 namespace acs712_external {
