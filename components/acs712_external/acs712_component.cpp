@@ -21,8 +21,8 @@ void ACS712Sensor::update() {
         amps = 0.0;
     }
 
-    current_sensor->publish_state(amps);
-    power_sensor->publish_state(amps * 230);
+    this->current_sensor->publish_state(amps);
+    this->power_sensor->publish_state(amps * 230);
 }
 
 }  // namespace acs712_external
