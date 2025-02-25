@@ -28,8 +28,10 @@ async def to_code(config):
 
     if "current" in config:
         sens = await sensor.new_sensor(config["current"])
-        cg.add(var.current_sensor, sens)
+        cg.add(var.current_sensor)  # ✅ Fix: Only pass one argument
+        var.current_sensor = sens   # ✅ Assign the sensor correctly
 
     if "power" in config:
         sens = await sensor.new_sensor(config["power"])
-        cg.add(var.power_sensor, sens)
+        cg.add(var.power_sensor)  # ✅ Fix: Only pass one argument
+        var.power_sensor = sens   # ✅ Assign the sensor correctly
