@@ -16,7 +16,7 @@ void ACS712Sensor::update() {
     for (int i = 0; i < count; i++) {
         average += this->ACS->mA_AC();
     }
-    float amps = (average / count / 10000.0) - 0.16;
+    float amps = (average / count / 10000.0) - 0.13;
     if (amps < 0.03) {
         amps = 0.0;
     }
