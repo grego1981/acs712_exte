@@ -25,7 +25,8 @@ CONFIG_SCHEMA = cv.Schema({
 async def to_code(config):
     var = cg.new_Pvariable(config[cv.GenerateID()])
     await cg.register_component(var, config)
-
+    # Add the ACS712 library
+    cg.add_library("RobTillaart/ACS712", "1.0.0")
     if "current" in config:
         sens = await sensor.new_sensor(config["current"])
         cg.add(var.set_current_sensor(sens))  # ✅ Use set_current_sensor()
